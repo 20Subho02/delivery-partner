@@ -22,7 +22,7 @@ dotenv.config()
 //middlewares
 app.use(express.static(buildpath))
 app.use(express.json())
-app.use(cors({ origin: '*', credentials: true}));
+app.use(cors({ origin: '*'}));
 
 //DB connection
 connectDB()
