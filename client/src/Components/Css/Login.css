@@ -1,0 +1,83 @@
+.login-page {
+  height: 100vh;
+  background-image: url('D:\MERN\Food-Ordering-Website\Food-Ordering-Website\Delivery\client\public\image\Delivery-boy.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+  background-color: #FFF;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2),
+              inset 0 2px 5px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  max-width: 320px;
+  height: 400px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+}
+
+.login-heading{
+    margin-bottom: 1.5rem;
+    color: #111;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    margin-top: 50px;
+}
+
+.login-text{
+    width: 100%;
+    padding: 12px;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 15px;
+    background-color: #fff;
+    color: #111;
+
+}
+
+.login-text ::placeholder{
+    color: #222;
+}
+
+.login-button{
+   margin-top: 1rem;
+   width: 106%;
+   padding: 12px;
+   border: none;
+   border-radius: 8px;
+   background: linear-gradient(135deg, #89f7fe, #66a6ff);
+   color: white;
+   font-size: 16px;
+   cursor: pointer;
+   transition: background 0.5s ease; 
+}
+
+.login-button  :hover{
+    background-color: #e04848;
+}
+
+.login-note{
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #111;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.signup-nav{
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
