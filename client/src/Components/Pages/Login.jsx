@@ -16,7 +16,7 @@ const Login = () => {
   const handleLoginClick = async () => {
     setIsClicked(true);
     try {
-      const res = await axios.post('/api/deliveryUser/login', formData);
+      const res = await axios.post('/login', formData);
       if (res.data.success) {
         toast.success('Login successful!');
         localStorage.setItem('token', res.data.token);
