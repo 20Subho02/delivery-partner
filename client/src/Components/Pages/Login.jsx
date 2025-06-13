@@ -4,6 +4,7 @@ import '../Css/Login.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { baseURL } from '../../lib/index.js'; // ✅ import baseURL
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -16,7 +17,7 @@ const Login = () => {
   const handleLoginClick = async () => {
     setIsClicked(true);
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/deliveryUser/login`, formData);
+      const res = await axios.post(`${baseURL}/api/deliveryUser/login`, formData); // ✅ use baseURL here
       if (res.data.success) {
         toast.success('Login successful!');
         localStorage.setItem('token', res.data.token);
