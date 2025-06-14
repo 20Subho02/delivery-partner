@@ -17,7 +17,7 @@ const Login = () => {
     setIsClicked(true);
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/deliveryUser/login`,
+        'http://localhost:5000/api/deliveryUser/login',
         formData
       );
 
