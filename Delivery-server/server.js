@@ -1,33 +1,16 @@
 import express from 'express';
-import cors from 'cors'
-import dotenv from 'dotenv'
-import path from 'path';
-import {connectDB} from './config/db.js'
-import colors from 'colors'
+import cors from 'cors';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import userRouter from './routes/DeliveryUserRoute.js';
-import addAccountRouter from './routes/AddAccountRoutes.js';
-
-//deployment
-const _dirname = path.dirname("")
-const buildpath = path.join(_dirname,"../client/build")
+import addAccountRouter from './routes/AddAccountRoutes.js'
 
 
+dotenv.config();
+const app = express();
 
-
-
-
-//app config
-const app = express()
-const port = process.env.PORT || 5000;
-dotenv.config()
-
-//middlewares
-app.use(express.static(buildpath))
-app.use(express.json())
-app.use(cors({ origin: '*'}));
-
-//DB connection
-connectDB()
+app.use(cors());
+app.use(express.json());
 
 //api 
 app.use("/api/deliveryUser",userRouter)
@@ -35,10 +18,7 @@ app.use("/images",express.static("uploads"))
 app.use("/api/account",addAccountRouter)
 
 
-app.get("/", (req,res) => {
-    res.send("API Working...")
-});
+connectDB();
 
-
-
-app.listen(port, () => console.log(`Server started on http://localhost:${port}` .bgCyan.white))
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

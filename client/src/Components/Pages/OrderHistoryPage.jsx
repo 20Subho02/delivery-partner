@@ -64,7 +64,7 @@ const OrderHistoryPage = () => {
     const fetchUserData = async () => {
       try {
         const res = await axios.post(
-          'http://localhost:5000/api/deliveryUser/getUserData',
+          'http://13.232.42.76:5000/api/deliveryUser/getUserData',
           { token },
           { headers: { Authorization: `Bearer ${token}` } }
         );
