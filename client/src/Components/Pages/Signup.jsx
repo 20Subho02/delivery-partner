@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import logo from '../../assets/logo.jpg'
 
 const Signup = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -34,7 +35,7 @@ const Signup = () => {
 
     setIsClicked(true);
     try {
-      const response = await axios.post('http://13.232.42.76:5000/api/deliveryUser/register', data);
+      const response = await axios.post('http://15.206.209.235:5000/api/deliveryUser/register', data);
       if (response.data.success) {
         toast.success("Signup successful!");
         navigate('/account-create-form');
@@ -51,9 +52,10 @@ const Signup = () => {
 
   return (
     <div className='signup-page'>
+    <img src={logo} alt='logo' className='site-logo' />
       <div className='signup-container'>
         <div className='signup-box'>
-          <h2 className='signup-heading'>FoodGenic Delivery Partner</h2>
+          <h2 className='signup-heading'>FoodGenie Delivery Partner</h2>
 
           <input
             type='text'

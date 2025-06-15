@@ -11,8 +11,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: #fce703;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   position: relative;
 }
 
@@ -36,8 +36,9 @@
 }
 
 .company-logo img {
-  width: 32px; 
-  height: 32px;
+  width: 130px; 
+  height: 65px;
+  margin-top: -10px;
 }
 
 .wallet,
@@ -530,4 +531,28 @@
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: row; /* keep horizontal layout */
+    flex-wrap: wrap;      /* allow wrapping but keep structure */
+    align-items: center;
+  }
+
+  .top-right {
+    flex-direction: row; /* don't stack icons vertically */
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .wallet {
+    justify-content: center;
+  }
+
+  .profile-wrapper {
+    order: 3;
+  }
 }

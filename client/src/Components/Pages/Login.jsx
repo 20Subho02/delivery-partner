@@ -4,6 +4,7 @@ import '../Css/Login.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import logo from '../../assets/logo.jpg'
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -17,7 +18,7 @@ const Login = () => {
     setIsClicked(true);
     try {
       const res = await axios.post(
-        'http://13.232.42.76:5000/api/deliveryUser/login',
+        'http://15.206.209.235:5000/api/deliveryUser/login',
         formData
       );
 
@@ -37,9 +38,10 @@ const Login = () => {
 
   return (
     <div className="login-page">
+    <img src={logo} alt='logo' className='site-logo' />
       <div className="login-container">
         <div className="login-box">
-          <h2 className="login-heading">FoodGenic Delivery Partner</h2>
+          <h2 className="login-heading">FoodGenie Delivery Partner</h2>
 
           <input
             type="text"

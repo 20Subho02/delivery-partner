@@ -80,7 +80,7 @@ const AccountForm = () => {
       sendData.append('customerPhoto', files.customerPhoto);
       sendData.append('idProofPhoto', files.idProofPhoto);
 
-      const res = await axios.post('http://13.232.42.76:5000/api/account/add-account', sendData);
+      const res = await axios.post('http://15.206.209.235:5000/api/account/add-account', sendData);
 
       if (res.data.success) {
         toast.success('Form submitted successfully!');

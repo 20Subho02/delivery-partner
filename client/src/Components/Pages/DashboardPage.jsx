@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../Css/DashboardPage.css';
 import { motion } from 'framer-motion';
-import { Bell, Clock, HelpCircle, History, LogOut, User, X } from 'lucide-react';
+import {  Clock, History, LogOut, User, X } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import logo from '../../assets/logo.jpg'
 
 const DashboardPage = () => {
   const [timer, setTimer] = useState(() => parseInt(localStorage.getItem('dashboard_timer') || '0'));
@@ -48,7 +49,7 @@ const [completedOrders, setCompletedOrders] = useState([]);
     const fetchUserData = async () => {
       try {
         const res = await axios.post(
-          'http://13.232.42.76:5000/api/deliveryUser/getUserData',
+          'http://15.206.209.235:5000/api/deliveryUser/getUserData',
           { token },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -60,7 +61,7 @@ const [completedOrders, setCompletedOrders] = useState([]);
 
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://13.232.42.76:5000/api/deliveryUser/placecod', {
+        const res = await axios.get('http://15.206.209.235:5000/api/deliveryUser/placecod', {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data.success) {
@@ -226,20 +227,16 @@ const [completedOrders, setCompletedOrders] = useState([]);
   return (
     <div className='dashboard-container'>
       <div className='top-bar'>
-        <div className='company-logo'><img src='image/logo.ico' alt='logo' /> FoodGenic</div>
+        <div className='company-logo'><img src={logo} alt='logo' className='site-logo' /></div>
         <div className='timer-section'><Clock /><span className='timer'>{formatTime(timer)}</span></div>
         <div className='top-right'>
           <div className='wallet'>💰 ₹ {walletAmount.toFixed(2)}</div>
-          <motion.div className='icon' animate={{ rotate: [0, -10, 10, -10, 0] }} transition={{ repeat: Infinity, repeatDelay: 4, duration: 0.6 }}>
-            <Bell />
-          </motion.div>
           <div className='user-photo' onClick={() => setDropdownOpen(!dropdownOpen)}>
             <div className='avatar-placeholder'>{getInitials(username)}</div>
             {dropdownOpen && (
               <div className='dropdown'>
                 <div className='dropdown-item'><User size={16} /> {username || 'My Account'}</div>
                 <div className='dropdown-item'><History size={16} /><NavLink to='/order-history' className='nav'>Order History</NavLink></div>
-                <div className='dropdown-item'><HelpCircle size={16} /> Help</div>
                 <div className='dropdown-item' onClick={handleLogout}><LogOut size={16} /> Log Out</div>
               </div>
             )}
