@@ -1,6 +1,6 @@
 .signup-page {
   height: 100vh;
-  background-image: url('D:\MERN\Food-Ordering-Website\Food-Ordering-Website\Delivery\client\public\image\Delivery-boy.jpg');
+  background-image: url('/image/Delivery-boy.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
