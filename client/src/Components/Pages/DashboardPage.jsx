@@ -49,7 +49,7 @@ const [completedOrders, setCompletedOrders] = useState([]);
     const fetchUserData = async () => {
       try {
         const res = await axios.post(
-          'http://15.206.209.235:5000/api/deliveryUser/getUserData',
+          'http://13.51.241.249:5000/api/deliveryUser/getUserData',
           { token },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -61,7 +61,7 @@ const [completedOrders, setCompletedOrders] = useState([]);
 
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://15.206.209.235:5000/api/deliveryUser/placecod', {
+        const res = await axios.get('http://13.51.241.249:5000/api/deliveryUser/placecod', {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data.success) {

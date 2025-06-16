@@ -18,7 +18,7 @@ const Login = () => {
     setIsClicked(true);
     try {
       const res = await axios.post(
-        'http://15.206.209.235:5000/api/deliveryUser/login',
+        'http://13.51.241.249:5000/api/deliveryUser/login',
         formData
       );
 

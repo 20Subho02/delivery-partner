@@ -35,7 +35,7 @@ const Signup = () => {
 
     setIsClicked(true);
     try {
-      const response = await axios.post('http://15.206.209.235:5000/api/deliveryUser/register', data);
+      const response = await axios.post('http://13.51.241.249:5000/api/deliveryUser/register', data);
       if (response.data.success) {
         toast.success("Signup successful!");
         navigate('/account-create-form');
