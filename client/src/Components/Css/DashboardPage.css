@@ -541,7 +541,7 @@
   }
 
   .top-right {
-    flex-direction: row; /* don't stack icons vertically */
+    flex-direction: row;
     gap: 10px;
     margin-top: 10px;
     justify-content: flex-end;
@@ -555,4 +555,64 @@
   .profile-wrapper {
     order: 3;
   }
+  .company-logo img {
+  width: 50px; 
+  height: 50px;
+  margin-top: -5px;
+  }
+  .timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6347;
+  margin-left: 5px;
+  margin-top: -15px;
+
+  }
+  .timer-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-left: -50px;
+}
+}
+
+.accept-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.accept-collect-btn,
+.accept-cancel-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 90%;
+  max-width: 300px;
+}
+
+.accept-collect-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.accept-collect-btn:hover {
+  background-color: #218838;
+}
+
+.accept-cancel-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.accept-cancel-btn:hover {
+  background-color: #e60000;
 }

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a015b69.css",
-    "main.js": "/static/js/main.f51c310a.js",
+    "main.css": "/static/css/main.ff5238ff.css",
+    "main.js": "/static/js/main.2bcca28d.js",
     "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
     "static/media/Delivery-boy.jpg": "/static/media/Delivery-boy.6b3b97fc610ea6412dce.jpg",
     "index.html": "/index.html",
-    "main.3a015b69.css.map": "/static/css/main.3a015b69.css.map",
-    "main.f51c310a.js.map": "/static/js/main.f51c310a.js.map",
+    "main.ff5238ff.css.map": "/static/css/main.ff5238ff.css.map",
+    "main.2bcca28d.js.map": "/static/js/main.2bcca28d.js.map",
     "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a015b69.css",
-    "static/js/main.f51c310a.js"
+    "static/css/main.ff5238ff.css",
+    "static/js/main.2bcca28d.js"
   ]
 }

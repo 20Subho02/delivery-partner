@@ -225,7 +225,7 @@ const [completedOrders, setCompletedOrders] = useState([]);
   };
 
   return (
-    <div className='dashboard-container'>
+      <div className='dashboard-container'>
       <div className='top-bar'>
         <div className='company-logo'><img src={logo} alt='logo' className='site-logo' /></div>
         <div className='timer-section'><Clock /><span className='timer'>{formatTime(timer)}</span></div>
@@ -305,7 +305,9 @@ const [completedOrders, setCompletedOrders] = useState([]);
                 ) : (
                   <p style={{ color: 'gray' }}>⏱️ Time's up!</p>
                 )}
-                <button className="accept-collect-button" onClick={handleDeliverSuccess}>Deliver Successfully</button>
+                <div className="row-button-wrapper">
+                  <button className="accept-collect-button" onClick={handleDeliverSuccess}>Deliver Successfully</button>
+                </div>
               </>
             ) : (
               <>
@@ -314,19 +316,24 @@ const [completedOrders, setCompletedOrders] = useState([]);
                   <p style={{ color: 'red', fontWeight: 'bold' }}>⚠️ Hurry up... collect the order!</p>
                 )}
                 <h3 className="accept-otp">🔒 OTP: <span style={{ fontFamily: 'monospace' }}>{otp}</span></h3>
+
                 <div className="accept-modal-actions">
-                  {!showCancelOptions ? (
-                    <button className="accept-cancel-btn" onClick={() => setShowCancelOption(true)}>❌ Cancel</button>
-                  ) : (
-                    <div className="cancel-reasons">
-                      <p>Select Reason for Cancellation:</p>
-                      {CANCEL_REASONS.map((reason, index) => (
-                        <button key={index} className="cancel-reason-btn" onClick={() => handleCancelOrder(reason)}>{reason}</button>
-                      ))}
-                      <button onClick={() => setShowCancelOption(false)} style={{ marginTop: '10px', color: 'red' }}>⬅ Back</button>
-                    </div>
-                  )}
-                  <button className="accept-collect-btn" onClick={handleCollectOrder}>✅ Collect Order</button>
+                  <div className="row-button-wrapper">
+                    <button className="accept-collect-btn" onClick={handleCollectOrder}>✅ Collect Order</button>
+                  </div>
+                  <div className="row-button-wrapper">
+                    {!showCancelOptions ? (
+                      <button className="accept-cancel-btn" onClick={() => setShowCancelOption(true)}>❌ Cancel</button>
+                    ) : (
+                      <div className="cancel-reasons">
+                        <p>Select Reason for Cancellation:</p>
+                        {CANCEL_REASONS.map((reason, index) => (
+                          <button key={index} className="cancel-reason-btn" onClick={() => handleCancelOrder(reason)}>{reason}</button>
+                        ))}
+                        <button onClick={() => setShowCancelOption(false)} style={{ marginTop: '10px', color: 'red' }}>⬅ Back</button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </>
             )}
